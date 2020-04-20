@@ -11,6 +11,6 @@ This is a basic example of a microservice architecture using:
 
 ## Use Case
 
-This examples demonstrates how to inject and use http and grpc services, publish and subscribe with RabbitMq with JWT Authentication.  Additionally, with some additional local configuration, it can easily be ran as docker images via docker compose, kubernates or service fabric.
+This examples demonstrates how to inject and use http and grpc services, publish and subscribe with RabbitMq and JWT Authentication.  Additionally, with some additional local configuration, it can easily be ran as docker images via docker compose, kubernates or service fabric.
 
 
