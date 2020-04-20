@@ -1,0 +1,53 @@
+version: '3.4'
+
+services:
+  httpgrpcservicesrestaurants:
+    image: ${DOCKER_REGISTRY-}httpgrpcservicesrestaurants
+    build:
+      context: .
+      dockerfile: src/HttpgrpcServicesRestaurants/Dockerfile
+    depends_on:
+      - rabbitmq
+      - mongo
+    command: rabbitmq:5672
+
+  rabbitmq:
+    image: rabbitmq:3
+    ports:
+      - '5672:5672'
+      - '25672:25672'
+
+  mongo:
+    image: mongo
+    ports:
+      - '27017:27017'
+
+  httpgrpcservicesidentity:
+    image: ${DOCKER_REGISTRY-}httpgrpcservicesidentity
+    build:
+      context: .
+      dockerfile: src/HttpgrpcServicesIdentity/Dockerfile
+    depends_on:
+      - rabbitmq
+      - mongo
+    command: rabbitmq:5672
+
+  httpgrpcapigateway:
+    image: ${DOCKER_REGISTRY-}httpgrpcapigateway
+    build:
+      context: .
+      dockerfile: src/HttpgrpcApi/Dockerfile
+    depends_on:
+      - rabbitmq
+    command: rabbitmq:5672
+
+  httpgrpcservicesfood:
+    image: ${DOCKER_REGISTRY-}httpgrpcservicesfood
+    build:
+      context: .
+      dockerfile: src/HttpgrpcServicesFood/Dockerfile
+    depends_on:
+      - rabbitmq
+      - mongo
+    command: rabbitmq:5672
+

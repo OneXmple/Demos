@@ -1,0 +1,13 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+  <ItemGroup>
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.10.8" />
+    <PackageReference Include="MongoDB.Driver" Version="2.10.3" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HttpgrpcCommon\HttpgrpcCommon.csproj" />
+  </ItemGroup>
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UserSecretsId>f3d62b1b-8dc3-4c96-aff6-01391a71c471</UserSecretsId>
+  </PropertyGroup>
+</Project>

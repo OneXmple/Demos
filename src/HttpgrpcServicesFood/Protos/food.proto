@@ -1,0 +1,27 @@
+﻿syntax = "proto3";
+
+option csharp_namespace = "HttpgrpcServices";
+
+package food;
+
+service FoodyService {
+  rpc CreateFood (FoodRequest) returns (FoodResponse);
+}
+
+message Foods{
+    repeated Items FoodItems = 1;
+    string Description = 2;
+    string RestaurantName = 3;
+}
+
+message Items{
+    string Name = 1;
+}
+
+message FoodRequest {
+  Foods Foods = 1;
+}
+
+message FoodResponse {
+  string message = 1;
+}
