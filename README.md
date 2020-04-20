@@ -1,4 +1,4 @@
-# Grpc and Http .Net Core Micorservice Example
+# Grpc and Http .Net Core Microservice Example
 
 This is a basic example of a microservice architecture using:
 
